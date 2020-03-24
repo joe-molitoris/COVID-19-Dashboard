@@ -340,7 +340,7 @@ trace_dimensions = {'height':350, 'width':400, 'box-shadow':'1px 1px 1px darkgre
 page_style = {'backgroundColor':'#1C1A1A', 'color':'#CECECE'}
 header_style = {'backgroundColor':'#1C1A1A'}
 #Creates app
-app = dash.Dash(__name__, external_stylesheets=['https://codepen.io/jmolitoris/pen/BaNpwVy.css'])
+app = dash.Dash(__name__, external_stylesheets=['https://codepen.io/jmolitoris/pen/BaNpwVy.css'], meta_tags=[{'name':'viewport', 'content':"width=device-width, initial-scale=1"}])
 
 app.layout = html.Div([
     html.Div([
