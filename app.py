@@ -302,7 +302,7 @@ def create_table():
     cfr = "{0:.1f}%".format(total_cfr)
     most_new_cases = "{0:.0f} ({1})".format(highest_number_of_new_cases, highest_number_new_cases_country)
     most_new_deaths = "{0:.0f} ({1})".format(highest_number_of_new_deaths, highest_number_new_deaths_country)
-    most_casespermill = "{0:.1f} ({1})".format(highest_cases_per_million, highest_cases_per_million_country)
+    most_casespermill = "{0:.0f} ({1})".format(highest_cases_per_million, highest_cases_per_million_country)
     most_cfr = "{0:.1f}% ({1})".format(highest_CFR, highest_CFR_country)
 
     summary_df = pd.DataFrame({
