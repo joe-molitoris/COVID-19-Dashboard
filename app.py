@@ -279,9 +279,6 @@ def create_table():
 
     new_countries = len(latest_df[latest_df['FirstCase']==latest_df['DateRep']])
 
-    latest_df['TotalPopulation'] = latest_df['TotalPopulation']*1000
-    latest_df['CasesPerMillion'] = latest_df['TotalCases']/latest_df['TotalPopulation']*1000000
-
     average_rate_per_million = latest_df['CasesPerMillion'].mean()
 
     highest_CFR = int(latest_df['CaseFatalityRate'].max())
