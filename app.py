@@ -31,7 +31,10 @@ data = [i for i in links if str(i).endswith('xlsx')]
 resp = requests.get(data[0])
 df = pd.read_excel(data[0])
 
-df = df.drop(['Day', 'Month', 'Year'], axis=1)
+keep_cols= ['DateRep', 'Cases', 'Deaths', 'Countries and territories', 'GeoId']
+drop_cols = [i for i in df.columns if i not in keep_cols]
+
+df = df.drop(drop_cols, axis=1)
 df.columns = ['DateRep', 'NewCases', 'Deaths', 'Country', 'GeoId']
 
 iso = pd.read_csv(DATA_PATH.joinpath('ISO-codes.csv'), encoding='latin1')
