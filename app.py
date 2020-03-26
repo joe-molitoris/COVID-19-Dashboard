@@ -47,9 +47,10 @@ totalpop.columns = ['TotalPopulation', 'iso3']
 
 df['Country'] = df['Country'].str.replace("_", " ")
 
-df.loc[df['Country']=='switzerland', 'Country']='Switzerland'
-df.loc[df['Country']=='United States of America', 'Country']='USA'
-df.loc[df['Country']=='South Korea', 'Country']='S. Korea'
+df['Country'] = df['Country'].str.title()
+
+for word in [' And ',' Of ', ' A ', ' An ', 'The ', ' On ']:
+    df['Country'] = df['Country'].str.replace(word, word.lower())
 
 unique_dates = df['DateRep'].unique().tolist()
 unique_countries = df['Country'].unique().tolist()
