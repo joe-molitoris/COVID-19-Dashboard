@@ -31,7 +31,7 @@ data = [i for i in links if str(i).endswith('xlsx')]
 resp = requests.get(data[0])
 df = pd.read_excel(data[0])
 
-keep_cols= ['DateRep', 'Cases', 'Deaths', 'Countries and territories', 'GeoId']
+keep_cols= ['dateRep', 'cases', 'deaths', 'countriesAndTerritories', 'geoId']
 drop_cols = [i for i in df.columns if i not in keep_cols]
 
 df = df.drop(drop_cols, axis=1)
